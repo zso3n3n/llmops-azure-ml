@@ -1,1 +1,1 @@
-# az-py-project-template
+# LLMOPS with Azure Machine Learning
