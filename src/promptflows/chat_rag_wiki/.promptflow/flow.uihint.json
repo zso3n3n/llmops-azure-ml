@@ -1,0 +1,11 @@
+{
+  "nodes": {
+    "augmented_chat": {
+      "variant_0": {
+        "inputs": {
+          "question": []
+        }
+      }
+    }
+  }
+}

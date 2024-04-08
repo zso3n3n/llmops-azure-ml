@@ -1,8 +1,12 @@
+# promptflow
+*.prompflow/
+
 # .vscode folder
 .vscode/
 
-# env file
+# env files
 .env
+config.json
 
 # mlruns
 mlruns/

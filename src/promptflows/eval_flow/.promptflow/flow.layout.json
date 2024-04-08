@@ -1,0 +1,50 @@
+{
+  "nodeLayouts": {
+    "inputs": {
+      "x": 620,
+      "y": 42,
+      "index": -1
+    },
+    "outputs": {
+      "x": 715,
+      "y": 578,
+      "index": -1
+    },
+    "groundedness_answer": {
+      "x": 1052.5,
+      "y": 310,
+      "index": 3
+    },
+    "embed_context": {
+      "x": 470,
+      "y": 176,
+      "index": 1
+    },
+    "embed_response": {
+      "x": 140,
+      "y": 176,
+      "index": 2
+    },
+    "answer_context_sim": {
+      "x": 305,
+      "y": 310,
+      "index": 4
+    },
+    "fluency_gpt": {
+      "x": 722.5,
+      "y": 310,
+      "index": 0
+    },
+    "concat_scores": {
+      "x": 470,
+      "y": 444,
+      "index": 5
+    },
+    "aggregate": {
+      "x": 305,
+      "y": 578,
+      "index": 6
+    }
+  },
+  "orientation": "Vertical"
+}

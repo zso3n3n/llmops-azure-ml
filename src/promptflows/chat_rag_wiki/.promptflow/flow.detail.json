@@ -1,0 +1,950 @@
+{
+  "flow_runs": [
+    {
+      "run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc_0",
+      "status": "Completed",
+      "error": null,
+      "inputs": {
+        "input": "What is Herbert Hoover known for?"
+      },
+      "output": {
+        "answer": "Herbert Hoover is known for serving as the 31st president of the United States from 1929 to 1933, during the onset of the Great Depression. Prior to his presidency, he was a wealthy mining engineer and held notable positions such as the leader of the wartime Commission for Relief in Belgium, director of the U.S. Food Administration, and U.S. secretary of commerce.",
+        "context": "Herbert Clark Hoover August 10 1874  October 20 1964 was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933 A member of the Republican Party he held office during the onset of the Great Depression A wealthy mining engineer before his presidency Hoover led the wartime Commission for Relief in Belgium served as the director of the US Food Administration and served as the US secretary of commerce Born to a Quaker family in West Branch Iowa Hoover grew up in Oregon He was one of the first graduates of the new Stanford University in 1895 He took a position with a Londonbased mining company working in Australia and China He rapidly became a wealthy mining engineer In 1914 the outbreak of World War I he organized and headed the Commission for Relief in Belgium an international relief organization that provided food to occupied BelgiumSource httpsenwikipediaorgwindexphpsearchHerbert Hoover"
+      },
+      "metrics": null,
+      "request": null,
+      "parent_run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc",
+      "root_run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc",
+      "source_run_id": null,
+      "flow_id": "chat_with_wikipedia",
+      "start_time": "2024-04-03T20:22:35.688903Z",
+      "end_time": "2024-04-03T20:22:44.034336Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "flow",
+          "node_name": "flow",
+          "type": "Flow",
+          "start_time": 1712193755.688903,
+          "end_time": 1712193764.034336,
+          "children": [
+            {
+              "name": "AzureOpenAI.chat",
+              "type": "Function",
+              "inputs": {
+                "prompt": "system:\nYou are an AI assistant tasked with turning human input into a searchable term. Given an input question or topic, infer a topic that should be used in a search.\n\nThe conversation history is provided just in case of a coreference (e.g. \"What is this?\" where \"this\" is defined in previous conversation).\n\nReturn the output as query used for next round user message.\n\n## EXAMPLE 1 ##\nuser:\nHuman: Tell me about George Washington?\n\nOutput: Gearge Washington\n## END of EXAMPLE ##\n\n## EXAMPLE 2 ##\nHuman: What is it like at the Taj Mahal?\n\nOutput: Taj Mahal\n## END OF EXAMPLE ##\n\nHuman: {{question}}\n\nOutput:",
+                "deployment_name": "gpt4-deployment",
+                "temperature": 0.7,
+                "top_p": 1.0,
+                "max_tokens": 100,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "question": "What is Herbert Hoover known for?"
+              },
+              "output": "Herbert Hoover",
+              "start_time": 1712193755.691628,
+              "end_time": 1712193756.848318,
+              "error": null,
+              "children": [
+                {
+                  "name": "openai.resources.chat.completions.Completions.create",
+                  "type": "LLM",
+                  "inputs": {
+                    "model": "gpt4-deployment",
+                    "messages": [
+                      {
+                        "role": "system",
+                        "content": "You are an AI assistant tasked with turning human input into a searchable term. Given an input question or topic, infer a topic that should be used in a search.\n\nThe conversation history is provided just in case of a coreference (e.g. \"What is this?\" where \"this\" is defined in previous conversation).\n\nReturn the output as query used for next round user message.\n\n## EXAMPLE 1 ##"
+                      },
+                      {
+                        "role": "user",
+                        "content": "Human: Tell me about George Washington?\n\nOutput: Gearge Washington\n## END of EXAMPLE ##\n\n## EXAMPLE 2 ##\nHuman: What is it like at the Taj Mahal?\n\nOutput: Taj Mahal\n## END OF EXAMPLE ##\n\nHuman: What is Herbert Hoover known for?\n\nOutput:"
+                      }
+                    ],
+                    "temperature": 0.7,
+                    "top_p": 1.0,
+                    "n": 1,
+                    "stream": false,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "user": "",
+                    "max_tokens": 100
+                  },
+                  "output": {
+                    "id": "chatcmpl-9A1PwKKhxUqeIMmeUbJbpNfTybL4S",
+                    "choices": [
+                      {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                          "content": "Herbert Hoover",
+                          "role": "assistant",
+                          "function_call": null,
+                          "tool_calls": null
+                        },
+                        "content_filter_results": {
+                          "hate": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "self_harm": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "sexual": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "violence": {
+                            "filtered": false,
+                            "severity": "safe"
+                          }
+                        }
+                      }
+                    ],
+                    "created": 1712175756,
+                    "model": "gpt-4",
+                    "object": "chat.completion",
+                    "system_fingerprint": null,
+                    "usage": {
+                      "completion_tokens": 3,
+                      "prompt_tokens": 152,
+                      "total_tokens": 155
+                    },
+                    "prompt_filter_results": [
+                      {
+                        "prompt_index": 0,
+                        "content_filter_results": {
+                          "hate": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "self_harm": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "sexual": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "violence": {
+                            "filtered": false,
+                            "severity": "safe"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "start_time": 1712193755.694795,
+                  "end_time": 1712193756.848017,
+                  "error": null,
+                  "children": [],
+                  "node_name": null,
+                  "parent_id": "c76fc204-0357-4fa1-9ee9-b11571cf5357",
+                  "id": "506ae430-dec0-4994-b1e4-f6142439a97c",
+                  "system_metrics": {
+                    "completion_tokens": 3,
+                    "prompt_tokens": 152,
+                    "total_tokens": 155
+                  }
+                }
+              ],
+              "node_name": "extract_query_from_question",
+              "parent_id": "",
+              "id": "c76fc204-0357-4fa1-9ee9-b11571cf5357",
+              "system_metrics": {
+                "completion_tokens": 3,
+                "prompt_tokens": 152,
+                "total_tokens": 155
+              }
+            },
+            {
+              "name": "get_wiki_url",
+              "type": "Function",
+              "inputs": {
+                "entity": "Herbert Hoover"
+              },
+              "output": [
+                "https://en.wikipedia.org/w/index.php?search=Herbert Hoover"
+              ],
+              "start_time": 1712193756.851904,
+              "end_time": 1712193757.62415,
+              "error": null,
+              "children": [],
+              "node_name": "get_wiki_url",
+              "parent_id": "",
+              "id": "9652aceb-31d9-4d45-ba80-0bfdf8a52eeb",
+              "system_metrics": {}
+            },
+            {
+              "name": "search_result_from_url",
+              "type": "Function",
+              "inputs": {
+                "url_list": [
+                  "https://en.wikipedia.org/w/index.php?search=Herbert Hoover"
+                ]
+              },
+              "output": [
+                [
+                  "https://en.wikipedia.org/w/index.php?search=Herbert Hoover",
+                  "Herbert Clark Hoover (August 10, 1874 – October 20, 1964) was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933. A member of the Republican Party, he held office during the onset of the Great Depression. A wealthy mining engineer before his presidency, Hoover led the wartime Commission for Relief in Belgium, served as the director of the U.S. Food Administration, and served as the U.S. secretary of commerce.. Born to a Quaker family in West Branch, Iowa, Hoover grew up in Oregon. He was one of the first graduates of the new Stanford University in 1895. He took a position with a London-based mining company working in Australia and China. He rapidly became a wealthy mining engineer. In 1914, the outbreak of World War I, he organized and headed the Commission for Relief in Belgium, an international relief organization that provided food to occupied Belgium."
+                ]
+              ],
+              "start_time": 1712193757.625533,
+              "end_time": 1712193758.669373,
+              "error": null,
+              "children": [],
+              "node_name": "search_result_from_url",
+              "parent_id": "",
+              "id": "bb8b2db0-db14-4af0-840f-0295e22591a3",
+              "system_metrics": {}
+            },
+            {
+              "name": "process_search_result",
+              "type": "Function",
+              "inputs": {
+                "search_result": [
+                  [
+                    "https://en.wikipedia.org/w/index.php?search=Herbert Hoover",
+                    "Herbert Clark Hoover (August 10, 1874 – October 20, 1964) was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933. A member of the Republican Party, he held office during the onset of the Great Depression. A wealthy mining engineer before his presidency, Hoover led the wartime Commission for Relief in Belgium, served as the director of the U.S. Food Administration, and served as the U.S. secretary of commerce.. Born to a Quaker family in West Branch, Iowa, Hoover grew up in Oregon. He was one of the first graduates of the new Stanford University in 1895. He took a position with a London-based mining company working in Australia and China. He rapidly became a wealthy mining engineer. In 1914, the outbreak of World War I, he organized and headed the Commission for Relief in Belgium, an international relief organization that provided food to occupied Belgium."
+                  ]
+                ]
+              },
+              "output": "Herbert Clark Hoover (August 10, 1874 – October 20, 1964) was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933. A member of the Republican Party, he held office during the onset of the Great Depression. A wealthy mining engineer before his presidency, Hoover led the wartime Commission for Relief in Belgium, served as the director of the U.S. Food Administration, and served as the U.S. secretary of commerce.. Born to a Quaker family in West Branch, Iowa, Hoover grew up in Oregon. He was one of the first graduates of the new Stanford University in 1895. He took a position with a London-based mining company working in Australia and China. He rapidly became a wealthy mining engineer. In 1914, the outbreak of World War I, he organized and headed the Commission for Relief in Belgium, an international relief organization that provided food to occupied Belgium.\nSource: https://en.wikipedia.org/w/index.php?search=Herbert Hoover",
+              "start_time": 1712193758.670709,
+              "end_time": 1712193758.671058,
+              "error": null,
+              "children": [],
+              "node_name": "process_search_result",
+              "parent_id": "",
+              "id": "dd7ab5bf-7374-4091-8cb1-1a2d9aa93737",
+              "system_metrics": {}
+            },
+            {
+              "name": "clean_context",
+              "type": "Function",
+              "inputs": {
+                "context": "Herbert Clark Hoover (August 10, 1874 – October 20, 1964) was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933. A member of the Republican Party, he held office during the onset of the Great Depression. A wealthy mining engineer before his presidency, Hoover led the wartime Commission for Relief in Belgium, served as the director of the U.S. Food Administration, and served as the U.S. secretary of commerce.. Born to a Quaker family in West Branch, Iowa, Hoover grew up in Oregon. He was one of the first graduates of the new Stanford University in 1895. He took a position with a London-based mining company working in Australia and China. He rapidly became a wealthy mining engineer. In 1914, the outbreak of World War I, he organized and headed the Commission for Relief in Belgium, an international relief organization that provided food to occupied Belgium.\nSource: https://en.wikipedia.org/w/index.php?search=Herbert Hoover"
+              },
+              "output": "Herbert Clark Hoover August 10 1874  October 20 1964 was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933 A member of the Republican Party he held office during the onset of the Great Depression A wealthy mining engineer before his presidency Hoover led the wartime Commission for Relief in Belgium served as the director of the US Food Administration and served as the US secretary of commerce Born to a Quaker family in West Branch Iowa Hoover grew up in Oregon He was one of the first graduates of the new Stanford University in 1895 He took a position with a Londonbased mining company working in Australia and China He rapidly became a wealthy mining engineer In 1914 the outbreak of World War I he organized and headed the Commission for Relief in Belgium an international relief organization that provided food to occupied BelgiumSource httpsenwikipediaorgwindexphpsearchHerbert Hoover",
+              "start_time": 1712193758.671956,
+              "end_time": 1712193758.672376,
+              "error": null,
+              "children": [],
+              "node_name": "clean_context",
+              "parent_id": "",
+              "id": "62ecf4f7-ceec-4d01-9e11-df4b8fcefc20",
+              "system_metrics": {}
+            },
+            {
+              "name": "AzureOpenAI.chat",
+              "type": "Function",
+              "inputs": {
+                "prompt": "system:\nGiven the following extracted parts of a long document and a question. Summarize the extracted parts from the long documents into a short response to the question.\nIf you don't know the answer, just say that you don't know. Don't try to make up an answer.\n\nBe as concise as possible in your response. Use a maximum of 5 sentences.\n\n## CONTEXT ##\n{{contexts}}\n\n## Search Term ##\n{{question}}\n\n## SUMMARY OUTPUT ##",
+                "deployment_name": "gpt4-deployment",
+                "temperature": 0.8,
+                "top_p": 1.0,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "question": "What is Herbert Hoover known for?",
+                "contexts": "Herbert Clark Hoover (August 10, 1874 – October 20, 1964) was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933. A member of the Republican Party, he held office during the onset of the Great Depression. A wealthy mining engineer before his presidency, Hoover led the wartime Commission for Relief in Belgium, served as the director of the U.S. Food Administration, and served as the U.S. secretary of commerce.. Born to a Quaker family in West Branch, Iowa, Hoover grew up in Oregon. He was one of the first graduates of the new Stanford University in 1895. He took a position with a London-based mining company working in Australia and China. He rapidly became a wealthy mining engineer. In 1914, the outbreak of World War I, he organized and headed the Commission for Relief in Belgium, an international relief organization that provided food to occupied Belgium.\nSource: https://en.wikipedia.org/w/index.php?search=Herbert Hoover",
+                "max_tokens": 100,
+                "stream": false
+              },
+              "output": "Herbert Hoover is known for serving as the 31st president of the United States from 1929 to 1933, during the onset of the Great Depression. Prior to his presidency, he was a wealthy mining engineer and held notable positions such as the leader of the wartime Commission for Relief in Belgium, director of the U.S. Food Administration, and U.S. secretary of commerce.",
+              "start_time": 1712193758.673185,
+              "end_time": 1712193764.029341,
+              "error": null,
+              "children": [
+                {
+                  "name": "openai.resources.chat.completions.Completions.create",
+                  "type": "LLM",
+                  "inputs": {
+                    "model": "gpt4-deployment",
+                    "messages": [
+                      {
+                        "role": "system",
+                        "content": "Given the following extracted parts of a long document and a question. Summarize the extracted parts from the long documents into a short response to the question.\nIf you don't know the answer, just say that you don't know. Don't try to make up an answer.\n\nBe as concise as possible in your response. Use a maximum of 5 sentences.\n\n## CONTEXT ##\nHerbert Clark Hoover (August 10, 1874 – October 20, 1964) was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933. A member of the Republican Party, he held office during the onset of the Great Depression. A wealthy mining engineer before his presidency, Hoover led the wartime Commission for Relief in Belgium, served as the director of the U.S. Food Administration, and served as the U.S. secretary of commerce.. Born to a Quaker family in West Branch, Iowa, Hoover grew up in Oregon. He was one of the first graduates of the new Stanford University in 1895. He took a position with a London-based mining company working in Australia and China. He rapidly became a wealthy mining engineer. In 1914, the outbreak of World War I, he organized and headed the Commission for Relief in Belgium, an international relief organization that provided food to occupied Belgium.\nSource: https://en.wikipedia.org/w/index.php?search=Herbert Hoover\n\n## Search Term ##\nWhat is Herbert Hoover known for?\n\n## SUMMARY OUTPUT ##"
+                      }
+                    ],
+                    "temperature": 0.8,
+                    "top_p": 1.0,
+                    "n": 1,
+                    "stream": false,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "user": "",
+                    "max_tokens": 100
+                  },
+                  "output": {
+                    "id": "chatcmpl-9A1PzBjmFHAKJz7cK9rAqlxDL097h",
+                    "choices": [
+                      {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                          "content": "Herbert Hoover is known for serving as the 31st president of the United States from 1929 to 1933, during the onset of the Great Depression. Prior to his presidency, he was a wealthy mining engineer and held notable positions such as the leader of the wartime Commission for Relief in Belgium, director of the U.S. Food Administration, and U.S. secretary of commerce.",
+                          "role": "assistant",
+                          "function_call": null,
+                          "tool_calls": null
+                        },
+                        "content_filter_results": {
+                          "hate": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "self_harm": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "sexual": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "violence": {
+                            "filtered": false,
+                            "severity": "safe"
+                          }
+                        }
+                      }
+                    ],
+                    "created": 1712175759,
+                    "model": "gpt-4",
+                    "object": "chat.completion",
+                    "system_fingerprint": null,
+                    "usage": {
+                      "completion_tokens": 79,
+                      "prompt_tokens": 315,
+                      "total_tokens": 394
+                    },
+                    "prompt_filter_results": [
+                      {
+                        "prompt_index": 0,
+                        "content_filter_results": {
+                          "hate": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "self_harm": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "sexual": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "violence": {
+                            "filtered": false,
+                            "severity": "safe"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "start_time": 1712193758.675494,
+                  "end_time": 1712193764.029003,
+                  "error": null,
+                  "children": [],
+                  "node_name": null,
+                  "parent_id": "015f5e4e-2ff6-400f-88ec-4e2d039cb720",
+                  "id": "a9e09a89-421b-45c8-8bf8-6541da6eec89",
+                  "system_metrics": {
+                    "completion_tokens": 79,
+                    "prompt_tokens": 315,
+                    "total_tokens": 394
+                  }
+                }
+              ],
+              "node_name": "augmented_chat",
+              "parent_id": "",
+              "id": "015f5e4e-2ff6-400f-88ec-4e2d039cb720",
+              "system_metrics": {
+                "completion_tokens": 79,
+                "prompt_tokens": 315,
+                "total_tokens": 394
+              }
+            }
+          ],
+          "system_metrics": {
+            "duration": 8.345433,
+            "prompt_tokens": 467,
+            "completion_tokens": 82,
+            "total_tokens": 549
+          },
+          "inputs": {
+            "input": "What is Herbert Hoover known for?"
+          },
+          "output": {
+            "answer": "Herbert Hoover is known for serving as the 31st president of the United States from 1929 to 1933, during the onset of the Great Depression. Prior to his presidency, he was a wealthy mining engineer and held notable positions such as the leader of the wartime Commission for Relief in Belgium, director of the U.S. Food Administration, and U.S. secretary of commerce.",
+            "context": "Herbert Clark Hoover August 10 1874  October 20 1964 was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933 A member of the Republican Party he held office during the onset of the Great Depression A wealthy mining engineer before his presidency Hoover led the wartime Commission for Relief in Belgium served as the director of the US Food Administration and served as the US secretary of commerce Born to a Quaker family in West Branch Iowa Hoover grew up in Oregon He was one of the first graduates of the new Stanford University in 1895 He took a position with a Londonbased mining company working in Australia and China He rapidly became a wealthy mining engineer In 1914 the outbreak of World War I he organized and headed the Commission for Relief in Belgium an international relief organization that provided food to occupied BelgiumSource httpsenwikipediaorgwindexphpsearchHerbert Hoover"
+          },
+          "error": null
+        }
+      ],
+      "name": "",
+      "description": "",
+      "tags": null,
+      "system_metrics": {
+        "duration": 8.345433,
+        "prompt_tokens": 467,
+        "completion_tokens": 82,
+        "total_tokens": 549
+      },
+      "result": {
+        "answer": "Herbert Hoover is known for serving as the 31st president of the United States from 1929 to 1933, during the onset of the Great Depression. Prior to his presidency, he was a wealthy mining engineer and held notable positions such as the leader of the wartime Commission for Relief in Belgium, director of the U.S. Food Administration, and U.S. secretary of commerce.",
+        "context": "Herbert Clark Hoover August 10 1874  October 20 1964 was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933 A member of the Republican Party he held office during the onset of the Great Depression A wealthy mining engineer before his presidency Hoover led the wartime Commission for Relief in Belgium served as the director of the US Food Administration and served as the US secretary of commerce Born to a Quaker family in West Branch Iowa Hoover grew up in Oregon He was one of the first graduates of the new Stanford University in 1895 He took a position with a Londonbased mining company working in Australia and China He rapidly became a wealthy mining engineer In 1914 the outbreak of World War I he organized and headed the Commission for Relief in Belgium an international relief organization that provided food to occupied BelgiumSource httpsenwikipediaorgwindexphpsearchHerbert Hoover"
+      },
+      "upload_metrics": false
+    }
+  ],
+  "node_runs": [
+    {
+      "node": "extract_query_from_question",
+      "flow_run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc",
+      "run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc_extract_query_from_question_0",
+      "status": "Completed",
+      "inputs": {
+        "deployment_name": "gpt4-deployment",
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "max_tokens": 100,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "question": "What is Herbert Hoover known for?"
+      },
+      "output": "Herbert Hoover",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc_0",
+      "start_time": "2024-04-03T20:22:35.691270Z",
+      "end_time": "2024-04-03T20:22:36.850596Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "AzureOpenAI.chat",
+          "type": "Function",
+          "inputs": {
+            "prompt": "system:\nYou are an AI assistant tasked with turning human input into a searchable term. Given an input question or topic, infer a topic that should be used in a search.\n\nThe conversation history is provided just in case of a coreference (e.g. \"What is this?\" where \"this\" is defined in previous conversation).\n\nReturn the output as query used for next round user message.\n\n## EXAMPLE 1 ##\nuser:\nHuman: Tell me about George Washington?\n\nOutput: Gearge Washington\n## END of EXAMPLE ##\n\n## EXAMPLE 2 ##\nHuman: What is it like at the Taj Mahal?\n\nOutput: Taj Mahal\n## END OF EXAMPLE ##\n\nHuman: {{question}}\n\nOutput:",
+            "deployment_name": "gpt4-deployment",
+            "temperature": 0.7,
+            "top_p": 1.0,
+            "max_tokens": 100,
+            "presence_penalty": 0.0,
+            "frequency_penalty": 0.0,
+            "question": "What is Herbert Hoover known for?"
+          },
+          "output": "Herbert Hoover",
+          "start_time": 1712193755.691628,
+          "end_time": 1712193756.848318,
+          "error": null,
+          "children": [
+            {
+              "name": "openai.resources.chat.completions.Completions.create",
+              "type": "LLM",
+              "inputs": {
+                "model": "gpt4-deployment",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are an AI assistant tasked with turning human input into a searchable term. Given an input question or topic, infer a topic that should be used in a search.\n\nThe conversation history is provided just in case of a coreference (e.g. \"What is this?\" where \"this\" is defined in previous conversation).\n\nReturn the output as query used for next round user message.\n\n## EXAMPLE 1 ##"
+                  },
+                  {
+                    "role": "user",
+                    "content": "Human: Tell me about George Washington?\n\nOutput: Gearge Washington\n## END of EXAMPLE ##\n\n## EXAMPLE 2 ##\nHuman: What is it like at the Taj Mahal?\n\nOutput: Taj Mahal\n## END OF EXAMPLE ##\n\nHuman: What is Herbert Hoover known for?\n\nOutput:"
+                  }
+                ],
+                "temperature": 0.7,
+                "top_p": 1.0,
+                "n": 1,
+                "stream": false,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "user": "",
+                "max_tokens": 100
+              },
+              "output": {
+                "id": "chatcmpl-9A1PwKKhxUqeIMmeUbJbpNfTybL4S",
+                "choices": [
+                  {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                      "content": "Herbert Hoover",
+                      "role": "assistant",
+                      "function_call": null,
+                      "tool_calls": null
+                    },
+                    "content_filter_results": {
+                      "hate": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "self_harm": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "sexual": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "violence": {
+                        "filtered": false,
+                        "severity": "safe"
+                      }
+                    }
+                  }
+                ],
+                "created": 1712175756,
+                "model": "gpt-4",
+                "object": "chat.completion",
+                "system_fingerprint": null,
+                "usage": {
+                  "completion_tokens": 3,
+                  "prompt_tokens": 152,
+                  "total_tokens": 155
+                },
+                "prompt_filter_results": [
+                  {
+                    "prompt_index": 0,
+                    "content_filter_results": {
+                      "hate": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "self_harm": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "sexual": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "violence": {
+                        "filtered": false,
+                        "severity": "safe"
+                      }
+                    }
+                  }
+                ]
+              },
+              "start_time": 1712193755.694795,
+              "end_time": 1712193756.848017,
+              "error": null,
+              "children": [],
+              "node_name": null,
+              "parent_id": "c76fc204-0357-4fa1-9ee9-b11571cf5357",
+              "id": "506ae430-dec0-4994-b1e4-f6142439a97c",
+              "system_metrics": {
+                "completion_tokens": 3,
+                "prompt_tokens": 152,
+                "total_tokens": 155
+              }
+            }
+          ],
+          "node_name": "extract_query_from_question",
+          "parent_id": "",
+          "id": "c76fc204-0357-4fa1-9ee9-b11571cf5357",
+          "system_metrics": {
+            "completion_tokens": 3,
+            "prompt_tokens": 152,
+            "total_tokens": 155
+          }
+        }
+      ],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "completion_tokens": 3,
+        "prompt_tokens": 152,
+        "total_tokens": 155,
+        "duration": 1.159326
+      },
+      "result": "Herbert Hoover"
+    },
+    {
+      "node": "get_wiki_url",
+      "flow_run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc",
+      "run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc_get_wiki_url_0",
+      "status": "Completed",
+      "inputs": {
+        "entity": "Herbert Hoover"
+      },
+      "output": [
+        "https://en.wikipedia.org/w/index.php?search=Herbert Hoover"
+      ],
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc_0",
+      "start_time": "2024-04-03T20:22:36.851804Z",
+      "end_time": "2024-04-03T20:22:37.624438Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "get_wiki_url",
+          "type": "Function",
+          "inputs": {
+            "entity": "Herbert Hoover"
+          },
+          "output": [
+            "https://en.wikipedia.org/w/index.php?search=Herbert Hoover"
+          ],
+          "start_time": 1712193756.851904,
+          "end_time": 1712193757.62415,
+          "error": null,
+          "children": [],
+          "node_name": "get_wiki_url",
+          "parent_id": "",
+          "id": "9652aceb-31d9-4d45-ba80-0bfdf8a52eeb",
+          "system_metrics": {}
+        }
+      ],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.772634
+      },
+      "result": [
+        "https://en.wikipedia.org/w/index.php?search=Herbert Hoover"
+      ]
+    },
+    {
+      "node": "search_result_from_url",
+      "flow_run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc",
+      "run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc_search_result_from_url_0",
+      "status": "Completed",
+      "inputs": {
+        "url_list": [
+          "https://en.wikipedia.org/w/index.php?search=Herbert Hoover"
+        ]
+      },
+      "output": [
+        [
+          "https://en.wikipedia.org/w/index.php?search=Herbert Hoover",
+          "Herbert Clark Hoover (August 10, 1874 – October 20, 1964) was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933. A member of the Republican Party, he held office during the onset of the Great Depression. A wealthy mining engineer before his presidency, Hoover led the wartime Commission for Relief in Belgium, served as the director of the U.S. Food Administration, and served as the U.S. secretary of commerce.. Born to a Quaker family in West Branch, Iowa, Hoover grew up in Oregon. He was one of the first graduates of the new Stanford University in 1895. He took a position with a London-based mining company working in Australia and China. He rapidly became a wealthy mining engineer. In 1914, the outbreak of World War I, he organized and headed the Commission for Relief in Belgium, an international relief organization that provided food to occupied Belgium."
+        ]
+      ],
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc_0",
+      "start_time": "2024-04-03T20:22:37.625410Z",
+      "end_time": "2024-04-03T20:22:38.669697Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "search_result_from_url",
+          "type": "Function",
+          "inputs": {
+            "url_list": [
+              "https://en.wikipedia.org/w/index.php?search=Herbert Hoover"
+            ]
+          },
+          "output": [
+            [
+              "https://en.wikipedia.org/w/index.php?search=Herbert Hoover",
+              "Herbert Clark Hoover (August 10, 1874 – October 20, 1964) was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933. A member of the Republican Party, he held office during the onset of the Great Depression. A wealthy mining engineer before his presidency, Hoover led the wartime Commission for Relief in Belgium, served as the director of the U.S. Food Administration, and served as the U.S. secretary of commerce.. Born to a Quaker family in West Branch, Iowa, Hoover grew up in Oregon. He was one of the first graduates of the new Stanford University in 1895. He took a position with a London-based mining company working in Australia and China. He rapidly became a wealthy mining engineer. In 1914, the outbreak of World War I, he organized and headed the Commission for Relief in Belgium, an international relief organization that provided food to occupied Belgium."
+            ]
+          ],
+          "start_time": 1712193757.625533,
+          "end_time": 1712193758.669373,
+          "error": null,
+          "children": [],
+          "node_name": "search_result_from_url",
+          "parent_id": "",
+          "id": "bb8b2db0-db14-4af0-840f-0295e22591a3",
+          "system_metrics": {}
+        }
+      ],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 1.044287
+      },
+      "result": [
+        [
+          "https://en.wikipedia.org/w/index.php?search=Herbert Hoover",
+          "Herbert Clark Hoover (August 10, 1874 – October 20, 1964) was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933. A member of the Republican Party, he held office during the onset of the Great Depression. A wealthy mining engineer before his presidency, Hoover led the wartime Commission for Relief in Belgium, served as the director of the U.S. Food Administration, and served as the U.S. secretary of commerce.. Born to a Quaker family in West Branch, Iowa, Hoover grew up in Oregon. He was one of the first graduates of the new Stanford University in 1895. He took a position with a London-based mining company working in Australia and China. He rapidly became a wealthy mining engineer. In 1914, the outbreak of World War I, he organized and headed the Commission for Relief in Belgium, an international relief organization that provided food to occupied Belgium."
+        ]
+      ]
+    },
+    {
+      "node": "process_search_result",
+      "flow_run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc",
+      "run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc_process_search_result_0",
+      "status": "Completed",
+      "inputs": {
+        "search_result": [
+          [
+            "https://en.wikipedia.org/w/index.php?search=Herbert Hoover",
+            "Herbert Clark Hoover (August 10, 1874 – October 20, 1964) was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933. A member of the Republican Party, he held office during the onset of the Great Depression. A wealthy mining engineer before his presidency, Hoover led the wartime Commission for Relief in Belgium, served as the director of the U.S. Food Administration, and served as the U.S. secretary of commerce.. Born to a Quaker family in West Branch, Iowa, Hoover grew up in Oregon. He was one of the first graduates of the new Stanford University in 1895. He took a position with a London-based mining company working in Australia and China. He rapidly became a wealthy mining engineer. In 1914, the outbreak of World War I, he organized and headed the Commission for Relief in Belgium, an international relief organization that provided food to occupied Belgium."
+          ]
+        ]
+      },
+      "output": "Herbert Clark Hoover (August 10, 1874 – October 20, 1964) was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933. A member of the Republican Party, he held office during the onset of the Great Depression. A wealthy mining engineer before his presidency, Hoover led the wartime Commission for Relief in Belgium, served as the director of the U.S. Food Administration, and served as the U.S. secretary of commerce.. Born to a Quaker family in West Branch, Iowa, Hoover grew up in Oregon. He was one of the first graduates of the new Stanford University in 1895. He took a position with a London-based mining company working in Australia and China. He rapidly became a wealthy mining engineer. In 1914, the outbreak of World War I, he organized and headed the Commission for Relief in Belgium, an international relief organization that provided food to occupied Belgium.\nSource: https://en.wikipedia.org/w/index.php?search=Herbert Hoover",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc_0",
+      "start_time": "2024-04-03T20:22:38.670610Z",
+      "end_time": "2024-04-03T20:22:38.671296Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "process_search_result",
+          "type": "Function",
+          "inputs": {
+            "search_result": [
+              [
+                "https://en.wikipedia.org/w/index.php?search=Herbert Hoover",
+                "Herbert Clark Hoover (August 10, 1874 – October 20, 1964) was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933. A member of the Republican Party, he held office during the onset of the Great Depression. A wealthy mining engineer before his presidency, Hoover led the wartime Commission for Relief in Belgium, served as the director of the U.S. Food Administration, and served as the U.S. secretary of commerce.. Born to a Quaker family in West Branch, Iowa, Hoover grew up in Oregon. He was one of the first graduates of the new Stanford University in 1895. He took a position with a London-based mining company working in Australia and China. He rapidly became a wealthy mining engineer. In 1914, the outbreak of World War I, he organized and headed the Commission for Relief in Belgium, an international relief organization that provided food to occupied Belgium."
+              ]
+            ]
+          },
+          "output": "Herbert Clark Hoover (August 10, 1874 – October 20, 1964) was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933. A member of the Republican Party, he held office during the onset of the Great Depression. A wealthy mining engineer before his presidency, Hoover led the wartime Commission for Relief in Belgium, served as the director of the U.S. Food Administration, and served as the U.S. secretary of commerce.. Born to a Quaker family in West Branch, Iowa, Hoover grew up in Oregon. He was one of the first graduates of the new Stanford University in 1895. He took a position with a London-based mining company working in Australia and China. He rapidly became a wealthy mining engineer. In 1914, the outbreak of World War I, he organized and headed the Commission for Relief in Belgium, an international relief organization that provided food to occupied Belgium.\nSource: https://en.wikipedia.org/w/index.php?search=Herbert Hoover",
+          "start_time": 1712193758.670709,
+          "end_time": 1712193758.671058,
+          "error": null,
+          "children": [],
+          "node_name": "process_search_result",
+          "parent_id": "",
+          "id": "dd7ab5bf-7374-4091-8cb1-1a2d9aa93737",
+          "system_metrics": {}
+        }
+      ],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.000686
+      },
+      "result": "Herbert Clark Hoover (August 10, 1874 – October 20, 1964) was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933. A member of the Republican Party, he held office during the onset of the Great Depression. A wealthy mining engineer before his presidency, Hoover led the wartime Commission for Relief in Belgium, served as the director of the U.S. Food Administration, and served as the U.S. secretary of commerce.. Born to a Quaker family in West Branch, Iowa, Hoover grew up in Oregon. He was one of the first graduates of the new Stanford University in 1895. He took a position with a London-based mining company working in Australia and China. He rapidly became a wealthy mining engineer. In 1914, the outbreak of World War I, he organized and headed the Commission for Relief in Belgium, an international relief organization that provided food to occupied Belgium.\nSource: https://en.wikipedia.org/w/index.php?search=Herbert Hoover"
+    },
+    {
+      "node": "clean_context",
+      "flow_run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc",
+      "run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc_clean_context_0",
+      "status": "Completed",
+      "inputs": {
+        "context": "Herbert Clark Hoover (August 10, 1874 – October 20, 1964) was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933. A member of the Republican Party, he held office during the onset of the Great Depression. A wealthy mining engineer before his presidency, Hoover led the wartime Commission for Relief in Belgium, served as the director of the U.S. Food Administration, and served as the U.S. secretary of commerce.. Born to a Quaker family in West Branch, Iowa, Hoover grew up in Oregon. He was one of the first graduates of the new Stanford University in 1895. He took a position with a London-based mining company working in Australia and China. He rapidly became a wealthy mining engineer. In 1914, the outbreak of World War I, he organized and headed the Commission for Relief in Belgium, an international relief organization that provided food to occupied Belgium.\nSource: https://en.wikipedia.org/w/index.php?search=Herbert Hoover"
+      },
+      "output": "Herbert Clark Hoover August 10 1874  October 20 1964 was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933 A member of the Republican Party he held office during the onset of the Great Depression A wealthy mining engineer before his presidency Hoover led the wartime Commission for Relief in Belgium served as the director of the US Food Administration and served as the US secretary of commerce Born to a Quaker family in West Branch Iowa Hoover grew up in Oregon He was one of the first graduates of the new Stanford University in 1895 He took a position with a Londonbased mining company working in Australia and China He rapidly became a wealthy mining engineer In 1914 the outbreak of World War I he organized and headed the Commission for Relief in Belgium an international relief organization that provided food to occupied BelgiumSource httpsenwikipediaorgwindexphpsearchHerbert Hoover",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc_0",
+      "start_time": "2024-04-03T20:22:38.671887Z",
+      "end_time": "2024-04-03T20:22:38.672603Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "clean_context",
+          "type": "Function",
+          "inputs": {
+            "context": "Herbert Clark Hoover (August 10, 1874 – October 20, 1964) was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933. A member of the Republican Party, he held office during the onset of the Great Depression. A wealthy mining engineer before his presidency, Hoover led the wartime Commission for Relief in Belgium, served as the director of the U.S. Food Administration, and served as the U.S. secretary of commerce.. Born to a Quaker family in West Branch, Iowa, Hoover grew up in Oregon. He was one of the first graduates of the new Stanford University in 1895. He took a position with a London-based mining company working in Australia and China. He rapidly became a wealthy mining engineer. In 1914, the outbreak of World War I, he organized and headed the Commission for Relief in Belgium, an international relief organization that provided food to occupied Belgium.\nSource: https://en.wikipedia.org/w/index.php?search=Herbert Hoover"
+          },
+          "output": "Herbert Clark Hoover August 10 1874  October 20 1964 was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933 A member of the Republican Party he held office during the onset of the Great Depression A wealthy mining engineer before his presidency Hoover led the wartime Commission for Relief in Belgium served as the director of the US Food Administration and served as the US secretary of commerce Born to a Quaker family in West Branch Iowa Hoover grew up in Oregon He was one of the first graduates of the new Stanford University in 1895 He took a position with a Londonbased mining company working in Australia and China He rapidly became a wealthy mining engineer In 1914 the outbreak of World War I he organized and headed the Commission for Relief in Belgium an international relief organization that provided food to occupied BelgiumSource httpsenwikipediaorgwindexphpsearchHerbert Hoover",
+          "start_time": 1712193758.671956,
+          "end_time": 1712193758.672376,
+          "error": null,
+          "children": [],
+          "node_name": "clean_context",
+          "parent_id": "",
+          "id": "62ecf4f7-ceec-4d01-9e11-df4b8fcefc20",
+          "system_metrics": {}
+        }
+      ],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.000716
+      },
+      "result": "Herbert Clark Hoover August 10 1874  October 20 1964 was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933 A member of the Republican Party he held office during the onset of the Great Depression A wealthy mining engineer before his presidency Hoover led the wartime Commission for Relief in Belgium served as the director of the US Food Administration and served as the US secretary of commerce Born to a Quaker family in West Branch Iowa Hoover grew up in Oregon He was one of the first graduates of the new Stanford University in 1895 He took a position with a Londonbased mining company working in Australia and China He rapidly became a wealthy mining engineer In 1914 the outbreak of World War I he organized and headed the Commission for Relief in Belgium an international relief organization that provided food to occupied BelgiumSource httpsenwikipediaorgwindexphpsearchHerbert Hoover"
+    },
+    {
+      "node": "augmented_chat",
+      "flow_run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc",
+      "run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc_augmented_chat_0",
+      "status": "Completed",
+      "inputs": {
+        "deployment_name": "gpt4-deployment",
+        "temperature": 0.8,
+        "top_p": 1.0,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "question": "What is Herbert Hoover known for?",
+        "contexts": "Herbert Clark Hoover (August 10, 1874 – October 20, 1964) was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933. A member of the Republican Party, he held office during the onset of the Great Depression. A wealthy mining engineer before his presidency, Hoover led the wartime Commission for Relief in Belgium, served as the director of the U.S. Food Administration, and served as the U.S. secretary of commerce.. Born to a Quaker family in West Branch, Iowa, Hoover grew up in Oregon. He was one of the first graduates of the new Stanford University in 1895. He took a position with a London-based mining company working in Australia and China. He rapidly became a wealthy mining engineer. In 1914, the outbreak of World War I, he organized and headed the Commission for Relief in Belgium, an international relief organization that provided food to occupied Belgium.\nSource: https://en.wikipedia.org/w/index.php?search=Herbert Hoover",
+        "max_tokens": 100
+      },
+      "output": "Herbert Hoover is known for serving as the 31st president of the United States from 1929 to 1933, during the onset of the Great Depression. Prior to his presidency, he was a wealthy mining engineer and held notable positions such as the leader of the wartime Commission for Relief in Belgium, director of the U.S. Food Administration, and U.S. secretary of commerce.",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "dc1d1536-ec33-425e-88f8-3b6cad5d60cc_0",
+      "start_time": "2024-04-03T20:22:38.673070Z",
+      "end_time": "2024-04-03T20:22:44.032189Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "AzureOpenAI.chat",
+          "type": "Function",
+          "inputs": {
+            "prompt": "system:\nGiven the following extracted parts of a long document and a question. Summarize the extracted parts from the long documents into a short response to the question.\nIf you don't know the answer, just say that you don't know. Don't try to make up an answer.\n\nBe as concise as possible in your response. Use a maximum of 5 sentences.\n\n## CONTEXT ##\n{{contexts}}\n\n## Search Term ##\n{{question}}\n\n## SUMMARY OUTPUT ##",
+            "deployment_name": "gpt4-deployment",
+            "temperature": 0.8,
+            "top_p": 1.0,
+            "presence_penalty": 0.0,
+            "frequency_penalty": 0.0,
+            "question": "What is Herbert Hoover known for?",
+            "contexts": "Herbert Clark Hoover (August 10, 1874 – October 20, 1964) was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933. A member of the Republican Party, he held office during the onset of the Great Depression. A wealthy mining engineer before his presidency, Hoover led the wartime Commission for Relief in Belgium, served as the director of the U.S. Food Administration, and served as the U.S. secretary of commerce.. Born to a Quaker family in West Branch, Iowa, Hoover grew up in Oregon. He was one of the first graduates of the new Stanford University in 1895. He took a position with a London-based mining company working in Australia and China. He rapidly became a wealthy mining engineer. In 1914, the outbreak of World War I, he organized and headed the Commission for Relief in Belgium, an international relief organization that provided food to occupied Belgium.\nSource: https://en.wikipedia.org/w/index.php?search=Herbert Hoover",
+            "max_tokens": 100,
+            "stream": false
+          },
+          "output": "Herbert Hoover is known for serving as the 31st president of the United States from 1929 to 1933, during the onset of the Great Depression. Prior to his presidency, he was a wealthy mining engineer and held notable positions such as the leader of the wartime Commission for Relief in Belgium, director of the U.S. Food Administration, and U.S. secretary of commerce.",
+          "start_time": 1712193758.673185,
+          "end_time": 1712193764.029341,
+          "error": null,
+          "children": [
+            {
+              "name": "openai.resources.chat.completions.Completions.create",
+              "type": "LLM",
+              "inputs": {
+                "model": "gpt4-deployment",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Given the following extracted parts of a long document and a question. Summarize the extracted parts from the long documents into a short response to the question.\nIf you don't know the answer, just say that you don't know. Don't try to make up an answer.\n\nBe as concise as possible in your response. Use a maximum of 5 sentences.\n\n## CONTEXT ##\nHerbert Clark Hoover (August 10, 1874 – October 20, 1964) was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933. A member of the Republican Party, he held office during the onset of the Great Depression. A wealthy mining engineer before his presidency, Hoover led the wartime Commission for Relief in Belgium, served as the director of the U.S. Food Administration, and served as the U.S. secretary of commerce.. Born to a Quaker family in West Branch, Iowa, Hoover grew up in Oregon. He was one of the first graduates of the new Stanford University in 1895. He took a position with a London-based mining company working in Australia and China. He rapidly became a wealthy mining engineer. In 1914, the outbreak of World War I, he organized and headed the Commission for Relief in Belgium, an international relief organization that provided food to occupied Belgium.\nSource: https://en.wikipedia.org/w/index.php?search=Herbert Hoover\n\n## Search Term ##\nWhat is Herbert Hoover known for?\n\n## SUMMARY OUTPUT ##"
+                  }
+                ],
+                "temperature": 0.8,
+                "top_p": 1.0,
+                "n": 1,
+                "stream": false,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "user": "",
+                "max_tokens": 100
+              },
+              "output": {
+                "id": "chatcmpl-9A1PzBjmFHAKJz7cK9rAqlxDL097h",
+                "choices": [
+                  {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                      "content": "Herbert Hoover is known for serving as the 31st president of the United States from 1929 to 1933, during the onset of the Great Depression. Prior to his presidency, he was a wealthy mining engineer and held notable positions such as the leader of the wartime Commission for Relief in Belgium, director of the U.S. Food Administration, and U.S. secretary of commerce.",
+                      "role": "assistant",
+                      "function_call": null,
+                      "tool_calls": null
+                    },
+                    "content_filter_results": {
+                      "hate": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "self_harm": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "sexual": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "violence": {
+                        "filtered": false,
+                        "severity": "safe"
+                      }
+                    }
+                  }
+                ],
+                "created": 1712175759,
+                "model": "gpt-4",
+                "object": "chat.completion",
+                "system_fingerprint": null,
+                "usage": {
+                  "completion_tokens": 79,
+                  "prompt_tokens": 315,
+                  "total_tokens": 394
+                },
+                "prompt_filter_results": [
+                  {
+                    "prompt_index": 0,
+                    "content_filter_results": {
+                      "hate": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "self_harm": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "sexual": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "violence": {
+                        "filtered": false,
+                        "severity": "safe"
+                      }
+                    }
+                  }
+                ]
+              },
+              "start_time": 1712193758.675494,
+              "end_time": 1712193764.029003,
+              "error": null,
+              "children": [],
+              "node_name": null,
+              "parent_id": "015f5e4e-2ff6-400f-88ec-4e2d039cb720",
+              "id": "a9e09a89-421b-45c8-8bf8-6541da6eec89",
+              "system_metrics": {
+                "completion_tokens": 79,
+                "prompt_tokens": 315,
+                "total_tokens": 394
+              }
+            }
+          ],
+          "node_name": "augmented_chat",
+          "parent_id": "",
+          "id": "015f5e4e-2ff6-400f-88ec-4e2d039cb720",
+          "system_metrics": {
+            "completion_tokens": 79,
+            "prompt_tokens": 315,
+            "total_tokens": 394
+          }
+        }
+      ],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "completion_tokens": 79,
+        "prompt_tokens": 315,
+        "total_tokens": 394,
+        "duration": 5.359119
+      },
+      "result": "Herbert Hoover is known for serving as the 31st president of the United States from 1929 to 1933, during the onset of the Great Depression. Prior to his presidency, he was a wealthy mining engineer and held notable positions such as the leader of the wartime Commission for Relief in Belgium, director of the U.S. Food Administration, and U.S. secretary of commerce."
+    }
+  ]
+}

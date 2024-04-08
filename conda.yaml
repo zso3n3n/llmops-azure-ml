@@ -1,0 +1,21 @@
+name: llmops
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - pip
+  - pip:
+    - numpy
+    - pandas
+    - ipykernel
+    - azure-ai-ml
+    - azure-identity
+    - pillow
+    - wheel
+    - python-dotenv
+    - azureml-fsspec
+    - azureml-mlflow
+    - promptflow
+    - prompt-toolkit
+    - keyrings.alt
+    - bs4

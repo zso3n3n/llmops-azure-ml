@@ -1,8 +1,0 @@
-name: many_models
-channels:
-  - conda-forge
-dependencies:
-  - python=3.8
-  - pip
-  - pip:
-    - -r requirements.txt

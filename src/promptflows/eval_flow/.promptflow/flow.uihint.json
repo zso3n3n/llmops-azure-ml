@@ -1,0 +1,42 @@
+{
+  "nodes": {
+    "embed_response": {
+      "variant_0": {
+        "inputs": {
+          "input": []
+        }
+      }
+    },
+    "groundedness_answer": {
+      "variant_0": {
+        "inputs": {
+          "answer": []
+        }
+      }
+    },
+    "concat_scores": {
+      "variant_0": {
+        "inputs": {
+          "answer": [],
+          "groundedness_answer": [],
+          "fluency_score": [],
+          "groundedness": []
+        }
+      }
+    },
+    "fluency_gpt": {
+      "variant_0": {
+        "inputs": {
+          "answer": []
+        }
+      }
+    },
+    "aggregate": {
+      "variant_0": {
+        "inputs": {
+          "results": []
+        }
+      }
+    }
+  }
+}

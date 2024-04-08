@@ -1,1 +1,1 @@
-# LLMOPS with Azure Machine Learning
+# LLMOPs with Azure Machine Learning

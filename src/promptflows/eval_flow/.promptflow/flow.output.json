@@ -1,0 +1,10 @@
+{
+  "output": {
+    "question": "What is Herbert Hoover known for?",
+    "answer": "Herbert Hoover is known for serving as the 31st president of the United States from 1929 to 1933, during the onset of the Great Depression. Prior to his presidency, he was a wealthy mining engineer and held notable positions such as the leader of the wartime Commission for Relief in Belgium, director of the U.S. Food Administration, and U.S. secretary of commerce.",
+    "context": "Herbert Clark Hoover August 10 1874 October 20 1964 was an American politician and humanitarian who served as the 31st president of the United States from 1929 to 1933 A member of the Republican Party he held office during the onset of the Great Depression A wealthy mining engineer before his presidency Hoover led the wartime Commission for Relief in Belgium served as the director of the US Food Administration and served as the US secretary of commerce Born to a Quaker family in West Branch Iowa Hoover grew up in Oregon He was one of the first graduates of the new Stanford University in 1895 He took a position with a Londonbased mining company working in Australia and China He rapidly became a wealthy mining engineer In 1914 the outbreak of World War I he organized and headed the Commission for Relief in Belgium an international relief organization that provided food to occupied BelgiumSource httpsenwikipediaorgwindexphpsearchHerbert Hoover",
+    "fluency": 5,
+    "groundedness": 5,
+    "answer_context_sim": 0.9562957597184387
+  }
+}
