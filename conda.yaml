@@ -16,6 +16,6 @@ dependencies:
     - azureml-fsspec
     - azureml-mlflow
     - promptflow
-    - prompt-toolkit
+    - promptflow-tools
     - keyrings.alt
     - bs4
