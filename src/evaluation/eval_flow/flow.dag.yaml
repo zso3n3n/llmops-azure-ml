@@ -88,9 +88,6 @@ nodes:
     type: code
     path: concat_scores.py
   inputs:
-    question: ${inputs.question}
-    answer: ${inputs.answer}
-    context: ${inputs.context}
     answer_context_sim: ${answer_context_sim.output}
     fluency_score: ${fluency_gpt.output}
     groundedness: ${groundedness_answer.output}

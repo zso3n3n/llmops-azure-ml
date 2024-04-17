@@ -61,21 +61,6 @@
     "concat_scores.py": {
       "type": "python",
       "inputs": {
-        "question": {
-          "type": [
-            "string"
-          ]
-        },
-        "answer": {
-          "type": [
-            "string"
-          ]
-        },
-        "context": {
-          "type": [
-            "string"
-          ]
-        },
         "groundedness": {
           "type": [
             "string"

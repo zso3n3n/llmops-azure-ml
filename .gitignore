@@ -1,5 +1,6 @@
 # promptflow
-*.prompflow/
+.prompflow/
+.process_log/
 
 # .vscode folder
 .vscode/

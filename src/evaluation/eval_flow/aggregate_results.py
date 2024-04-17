@@ -1,4 +1,4 @@
-from promptflow import tool
+from promptflow.core import tool, log_metric
 from typing import List
 from statistics import mean
 # The inputs section will change based on the arguments of the tool function, after you save the code
@@ -17,6 +17,9 @@ def aggregate_results(results: List[dict]) -> dict:
         'groundedness': mean(groundedness_scores),
         'answer_context_sim': round(mean(answer_context_sim_scores),2)
     }
+
+    for key, value in output.items():
+        log_metric(key, value)
 
     return output
 
