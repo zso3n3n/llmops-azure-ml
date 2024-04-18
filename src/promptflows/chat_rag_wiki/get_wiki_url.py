@@ -1,4 +1,4 @@
-from promptflow import tool
+from promptflow.core import tool
 import requests
 import bs4
 import re
