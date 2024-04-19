@@ -39,6 +39,8 @@ jobs:
           AZURE_OPENAI_ENDPOINT: ${{secrets.AZURE_OPENAI_ENDPOINT}}
           AZURE_OPENAI_KEY: ${{secrets.AZURE_OPENAI_KEY}}
         run: |
+          echo "AOAI endpoint:"
           echo $AZURE_OPENAI_ENDPOINT
-          pf connection create --file ./src/promptflows/connections/connect_aoai.yaml --set api_key="$AZURE_OPENAI_KEY" api_base="$AZURE_OPENAI_ENDPOINT" --name=aoai_connection
+          echo "Starting..."
+          pf connection create --file ./src/promptflows/connections/connect_aoai.yaml --set api_key=$AZURE_OPENAI_KEY api_base=$AZURE_OPENAI_ENDPOINT --name=aoai_connection
           python ./src/evaluation/test_chat_quality.py
