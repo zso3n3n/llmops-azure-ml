@@ -42,5 +42,5 @@ jobs:
           echo "AOAI endpoint:"
           echo $AZURE_OPENAI_ENDPOINT
           echo "Starting..."
-          pf connection create --file ./src/promptflows/connections/connect_aoai.yaml --set api_key=$AZURE_OPENAI_KEY api_base=$AZURE_OPENAI_ENDPOINT --name=aoai_connection
+          pf connection create --file ./src/promptflows/connections/connect_aoai.yaml --set api_key=f94b89f443624a77a359cfa1b1f75afb api_base=https://lllmops-aoai-sweden-c.openai.azure.com/ --name=aoai_connection
           python ./src/evaluation/test_chat_quality.py
