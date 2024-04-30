@@ -32,7 +32,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install promptflow promptflow-tools keyrings.alt bs4
+          pip install promptflow promptflow-tools keyrings.alt bs4 azure-identity
       
       - name: Test Chat Quality
         env:
