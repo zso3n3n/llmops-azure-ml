@@ -36,9 +36,8 @@ jobs:
       
       - name: Test Chat Quality
         env:
-          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
-          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+          RESOURCE_GROUP_NAME: ${{ secrets.RESOURCE_GROUP_NAME }}
+          WORKSPACE_NAME: ${{ secrets.WORKSPACE_NAME }}
+          SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
         run: |
-          pf connection delete -n aoai_connection -y
-          pf connection create --file ./src/promptflows/connections/connect_aoai.yaml --set api_key="$AZURE_OPENAI_KEY" api_base="$AZURE_OPENAI_ENDPOINT" --name=aoai_connection
           python ./src/evaluation/test_chat_quality.py
