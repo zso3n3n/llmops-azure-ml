@@ -1,4 +1,5 @@
-from promptflow.client import PFClient
+from promptflow.azure import PFClient
+from promptflow.entities import Run
 from azure.identity import DefaultAzureCredential
 import os
 
@@ -18,24 +19,33 @@ def quality_test():
   data = "./src/evaluation/input_test_data.csv" # set the data file
 
   # Define runtime and resources
-  resources = {"compute": "remote-cpu-cluster"}
+  resources = {"instance_type": "Standard_D2"}
 
-  # Run chat flow to generate chat results
-  rag_chat_run = pf.run(
+ ##### Run chat flow #########
+  chat_run = Run(
+      display_name="Chat RAG Wiki Run",
       flow=chat_flow,
       data=data,
-      stream=False,
       resources=resources,
       column_mapping={  # map the url field from the data to the url input of the flow
         "input": "${data.input}",
       }
   )
 
-  # Run evaluation flow to evaluate chat results
-  rag_eval_run = pf.run(
+  chat_run_job = pf.runs.create_or_update(
+    run=chat_run,
+)
+  
+  pf.runs.stream(chat_run_job) # This is important - essentially a wait function
+
+ ###############################
+
+ ##### Run eval flow  #########
+  eval_run = Run(
+      display_name="Eval RAG Wiki Run",
       flow=eval_flow,
       data=data,
-      run=rag_chat_run,
+      run=chat_run,
       stream=False,
       resources=resources,
       column_mapping={  # map the url field from the data to the url input of the flow
@@ -45,7 +55,17 @@ def quality_test():
       }
   )
 
-  metric_dict = dict(pf.get_metrics(rag_eval_run))
+  eval_run_job = pf.runs.create_or_update(
+    run=eval_run,
+  )
+  
+  pf.runs.stream(eval_run_job)
+
+ ###############################
+
+ # Run Tests with Assertions
+
+  metric_dict = dict(pf.get_metrics(eval_run_job))
 
   print(f"RESULTS: {metric_dict}")
 
@@ -53,7 +73,7 @@ def quality_test():
   assert(metric_dict['answer_context_sim'] >= 0.97)
   assert(metric_dict['groundedness'] >= 5)
 
-  return metric_dict
+  return
 
 if __name__ == "__main__":
   quality_test()  

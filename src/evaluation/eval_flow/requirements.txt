@@ -1,0 +1,7 @@
+azure-identity
+pillow
+wheel
+promptflow
+promptflow-tools
+keyrings.alt
+bs4

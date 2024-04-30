@@ -30,7 +30,7 @@ nodes:
     frequency_penalty: 0
     question: ${inputs.input}
   provider: AzureOpenAI
-  connection: aoai-connection
+  connection: aoai-connect
   api: chat
   module: promptflow.tools.aoai
   use_variants: false
@@ -80,7 +80,7 @@ nodes:
     contexts: ${process_search_result.output}
     max_tokens: 100
   provider: AzureOpenAI
-  connection: aoai-connection
+  connection: aoai-connect
   api: chat
   module: promptflow.tools.aoai
   use_variants: false

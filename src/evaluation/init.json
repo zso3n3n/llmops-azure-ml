@@ -1,0 +1,6 @@
+{
+    "model_config": {
+        "connection": "aoai-connect",
+        "azure_deployment": "gpt4-deployment"
+    }
+}
