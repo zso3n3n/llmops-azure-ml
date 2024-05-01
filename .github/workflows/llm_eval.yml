@@ -23,6 +23,14 @@ jobs:
       - name: Checkout Repo 
         uses: actions/checkout@v3
 
+      - name: Install az ml extension
+        run: az extension add -n ml -y
+
+      - name: Azure login
+        uses: azure/login@v1
+        with:
+          creds: ${{secrets.AZURE_CREDENTIALS}}
+
       # Runs a single command using the runners shell
       - name: Setup Python
         uses: actions/setup-python@v3
