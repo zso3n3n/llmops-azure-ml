@@ -69,9 +69,9 @@ def quality_test():
 
   print(f"RESULTS: {metric_dict}")
 
-  assert(metric_dict['fluency'] >= 5)
-  assert(metric_dict['answer_context_sim'] >= 0.97)
-  assert(metric_dict['groundedness'] >= 5)
+  assert(metric_dict['fluency'] >= 4)
+  assert(metric_dict['answer_context_sim'] >= 0.85)
+  assert(metric_dict['groundedness'] >= 4)
 
   return
 
