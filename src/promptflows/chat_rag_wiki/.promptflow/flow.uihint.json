@@ -6,6 +6,19 @@
           "question": []
         }
       }
+    },
+    "prompt_shield": {
+      "variant_0": {
+        "inputs": {
+          "hate_category": [],
+          "self_harm_category": [],
+          "sexual_category": [],
+          "violence_category": [],
+          "text": [],
+          "prompt": [],
+          "context": []
+        }
+      }
     }
   }
 }

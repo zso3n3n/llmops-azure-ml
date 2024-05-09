@@ -1,13 +1,13 @@
 {
   "nodeLayouts": {
     "inputs": {
-      "x": 455,
+      "x": 610,
       "y": 42,
       "index": -1
     },
     "outputs": {
-      "x": 385,
-      "y": 846,
+      "x": 550,
+      "y": 980,
       "index": -1
     },
     "extract_query_from_question": {
@@ -39,6 +39,11 @@
       "x": 140,
       "y": 712,
       "index": 5
+    },
+    "prompt_shield": {
+      "x": 655,
+      "y": 846,
+      "index": 6
     }
   },
   "orientation": "Vertical"

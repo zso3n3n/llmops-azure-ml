@@ -15,6 +15,9 @@ outputs:
   context:
     type: string
     reference: ${clean_context.output}
+  attack_detected:
+    type: string
+    reference: ${prompt_shield.output}
 nodes:
 - name: extract_query_from_question
   type: llm
@@ -84,3 +87,11 @@ nodes:
   api: chat
   module: promptflow.tools.aoai
   use_variants: false
+- name: prompt_shield
+  type: python
+  source:
+    type: code
+    path: prompt_shield.py
+  inputs:
+    prompt: ${inputs.input}
+    context: ${clean_context.output}

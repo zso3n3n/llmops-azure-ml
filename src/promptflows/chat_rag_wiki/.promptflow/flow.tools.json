@@ -86,6 +86,23 @@
                 }
             },
             "source": "augmented_chat.jinja2"
+        },
+        "prompt_shield.py": {
+            "type": "python",
+            "inputs": {
+                "prompt": {
+                    "type": [
+                        "string"
+                    ]
+                },
+                "context": {
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "source": "prompt_shield.py",
+            "function": "prompt_shield"
         }
     },
     "package": {}

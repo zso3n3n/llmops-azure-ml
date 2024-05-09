@@ -1,4 +1,5 @@
 azure-identity
+azure-ai-contentsafety
 pillow
 wheel
 promptflow

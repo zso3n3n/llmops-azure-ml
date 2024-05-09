@@ -10,6 +10,7 @@ dependencies:
     - ipykernel
     - azure-ai-ml
     - azure-identity
+    - azureai-contentsafety
     - pillow
     - wheel
     - python-dotenv
