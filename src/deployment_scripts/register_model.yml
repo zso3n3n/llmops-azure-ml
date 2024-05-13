@@ -1,6 +1,6 @@
 $schema: https://azuremlschemas.azureedge.net/latest/model.schema.json
 name: chat-wiki-rag-model
-path: ../promptflows/chat_rag_wiki
+path: ../chat/chat_rag_wiki
 description: register basic chat flow folder as a custom model
 properties:
   # In AuzreML studio UI, endpoint detail UI Test tab needs this property to know it's from prompt flow
