@@ -15,7 +15,7 @@ def quality_test():
                 )
   
   # Define Flows and Data
-  chat_flow = "./src/promptflows/chat_rag_wiki" # set the flow directory
+  chat_flow = "./src/chat/chat_rag_wiki" # set the flow directory
   eval_flow = "./src/evaluation/eval_flow" # set flow directory
   data = "./src/evaluation/input_test_data.csv" # set the data file
 
