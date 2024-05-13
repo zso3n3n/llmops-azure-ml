@@ -21,7 +21,6 @@ def prompt_shield(prompt: str, context: str):
         
         response = requests.post(url=url, headers=headers, json=body)
         promptAttackDetected = response.json()["userPromptAnalysis"]['attackDetected']
-        print(promptAttackDetected)
 
         return promptAttackDetected
     
