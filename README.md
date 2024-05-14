@@ -10,6 +10,8 @@ The repository aligns with the three main pillars of LLMOps:
 2. Monitoring - _near real-time capture of deployment metrics and security threats_
 3. Feedback - _post-interaction analysis of user behavior and model responses to drive future improvements_
 
+Checkout this Blog post for a more in depth overview: [Is my LLM Chatbot Ready for Production?](https://techcommunity.microsoft.com/t5/ai-ai-platform-blog/is-my-llm-chatbot-ready-for-production/ba-p/4102526)
+
 ### **Getting Started**  
 This repository contains Demo Notebooks with accompanying [source code](./src/) for all stages of an LLMOps implementaiton
   
