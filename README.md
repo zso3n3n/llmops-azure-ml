@@ -19,6 +19,6 @@ This repository contains Demo Notebooks with accompanying [source code](./src/) 
   - 00_setup: _Environment and development setup_
   - 01_evaluation: _Use PromptFlow to orchestrate evaluation of a chatbot. Then use that evaluation framework with GitHub Actions for CI/CD_
   - 02_monitoring: _Setup a system to monitor a chatbot for secutiry and availability in real time_
-  - 03_feedback: _Evaluate production inputs/responses captured with Model Data Collector. Use an LLM to sythesize mock [user survey feedback](./data/sample_user_feedback.csv)"
+  - 03_feedback: _Evaluate production inputs/responses captured with Model Data Collector. Use an LLM to sythesize and categorize mock [user survey feedback](./data/sample_user_feedback.csv)_
 
 
