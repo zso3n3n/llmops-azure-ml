@@ -1,6 +1,8 @@
 $schema: https://azuremlschemas.azureedge.net/promptflow/latest/AzureOpenAIConnection.schema.json
-name: aoai_connection
-type: azure_open_ai
-api_key: "<user-input>"
+name: "aoai-connect"
+type: azure_open_ai # snake case
+api_key: "<user-input>" # Don't replace the '<user-input>' placeholder. The application will prompt you to enter a value when it runs.
 api_base: "<user-input>"
 api_type: "azure"
+api_version: "2024-02-01"
+auth_mode: key # auth_mode: meid_token to use managed identity, and comment 'api_key' line out.  

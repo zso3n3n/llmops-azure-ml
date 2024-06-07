@@ -1,7 +1,7 @@
 {
   "flow_runs": [
     {
-      "run_id": "20358d9d-18dd-4254-be35-e391e0d23ec6_0",
+      "run_id": "ca3c7ef4-2c86-45ab-81e1-7d0b284e0f3f_0",
       "status": "Failed",
       "error": {
         "message": "OpenAI API hits AuthenticationError: Error code: 401 - {'statusCode': 401, 'message': 'Unauthorized. Access token is missing, invalid, audience is incorrect (https://cognitiveservices.azure.com), or have expired.'} [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]",
@@ -23,7 +23,7 @@
           "innerException": {
             "type": "AuthenticationError",
             "message": "Error code: 401 - {'statusCode': 401, 'message': 'Unauthorized. Access token is missing, invalid, audience is incorrect (https://cognitiveservices.azure.com), or have expired.'}",
-            "stackTrace": "Traceback (most recent call last):\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tools/common.py\", line 353, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tools/aoai.py\", line 154, in chat\n    completion = self._client.chat.completions.create(**params)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tracing/_integrations/_openai_injector.py\", line 88, in wrapper\n    return f(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tracing/_trace.py\", line 380, in wrapped\n    output = func(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_utils/_utils.py\", line 275, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/resources/chat/completions.py\", line 667, in create\n    return self._post(\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_base_client.py\", line 1213, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_base_client.py\", line 902, in request\n    return self._request(\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_base_client.py\", line 993, in _request\n    raise self._make_status_error_from_response(err.response) from None\n",
+            "stackTrace": "Traceback (most recent call last):\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tools/common.py\", line 353, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tools/aoai.py\", line 154, in chat\n    completion = self._client.chat.completions.create(**params)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tracing/_integrations/_openai_injector.py\", line 88, in wrapper\n    return f(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tracing/_trace.py\", line 380, in wrapped\n    output = func(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_utils/_utils.py\", line 277, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/resources/chat/completions.py\", line 606, in create\n    return self._post(\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_base_client.py\", line 1240, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_base_client.py\", line 921, in request\n    return self._request(\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_base_client.py\", line 1020, in _request\n    raise self._make_status_error_from_response(err.response) from None\n",
             "innerException": null
           }
         }
@@ -34,37 +34,33 @@
       "output": null,
       "metrics": null,
       "request": null,
-      "parent_run_id": "20358d9d-18dd-4254-be35-e391e0d23ec6",
-      "root_run_id": "20358d9d-18dd-4254-be35-e391e0d23ec6",
+      "parent_run_id": "ca3c7ef4-2c86-45ab-81e1-7d0b284e0f3f",
+      "root_run_id": "ca3c7ef4-2c86-45ab-81e1-7d0b284e0f3f",
       "source_run_id": null,
       "flow_id": "chat_with_wikipedia",
-      "start_time": "2024-05-07T21:26:03.006451Z",
-      "end_time": "2024-05-07T21:26:04.010169Z",
+      "start_time": "2024-06-07T19:38:07.305870Z",
+      "end_time": "2024-06-07T19:38:08.199676Z",
       "index": 0,
       "api_calls": [
         {
           "name": "flow",
           "node_name": "flow",
           "type": "Flow",
-          "start_time": 1715135163.006451,
-          "end_time": 1715135164.010169,
+          "start_time": 1717807087.30587,
+          "end_time": 1717807088.199676,
           "children": [
             {
               "name": "AzureOpenAI.chat",
               "type": "Function",
               "inputs": {
-                "prompt": "system:\nYou are an AI assistant tasked with turning human input into a searchable term. Given an input question or topic, infer a topic that should be used in a search.\n\nThe conversation history is provided just in case of a coreference (e.g. \"What is this?\" where \"this\" is defined in previous conversation).\n\nReturn the output as query used for next round user message.\n\n## EXAMPLE 1 ##\nuser:\nHuman: Tell me about George Washington?\n\nOutput: Gearge Washington\n## END of EXAMPLE ##\n\n## EXAMPLE 2 ##\nHuman: What is it like at the Taj Mahal?\n\nOutput: Taj Mahal\n## END OF EXAMPLE ##\n\nHuman: {{question}}\n\nOutput:",
+                "prompt": "system:\nYou are an AI assistant tasked with turning human input into a searchable term. Given an input question or topic, infer a topic that should be used in a search.\n\nThe conversation history is provided just in case of a coreference (e.g. \"What is this?\" where \"this\" is defined in previous conversation).\n\nReturn the output as query used for next round user message.\n\n## EXAMPLE 1 ##\nuser:\nHuman: Tell me about George Washington?\n\nOutput: George Washington\n## END of EXAMPLE ##\n\n## EXAMPLE 2 ##\nHuman: What is it like at the Taj Mahal?\n\nOutput: Taj Mahal\n## END OF EXAMPLE ##\n\nHuman: {{question}}\n\nOutput:",
                 "deployment_name": "gpt4-deployment",
-                "temperature": 0.7,
-                "top_p": 1.0,
-                "max_tokens": 100,
-                "presence_penalty": 0.0,
-                "frequency_penalty": 0.0,
+                "temperature": 0.0,
                 "question": "What is Herbert Hoover known for?"
               },
               "output": null,
-              "start_time": 1715135163.09315,
-              "end_time": 1715135163.972516,
+              "start_time": 1717807087.307992,
+              "end_time": 1717807088.16252,
               "error": {
                 "message": "OpenAI API hits AuthenticationError: Error code: 401 - {'statusCode': 401, 'message': 'Unauthorized. Access token is missing, invalid, audience is incorrect (https://cognitiveservices.azure.com), or have expired.'} [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]",
                 "type": "WrappedOpenAIError"
@@ -82,40 +78,39 @@
                       },
                       {
                         "role": "user",
-                        "content": "Human: Tell me about George Washington?\n\nOutput: Gearge Washington\n## END of EXAMPLE ##\n\n## EXAMPLE 2 ##\nHuman: What is it like at the Taj Mahal?\n\nOutput: Taj Mahal\n## END OF EXAMPLE ##\n\nHuman: What is Herbert Hoover known for?\n\nOutput:"
+                        "content": "Human: Tell me about George Washington?\n\nOutput: George Washington\n## END of EXAMPLE ##\n\n## EXAMPLE 2 ##\nHuman: What is it like at the Taj Mahal?\n\nOutput: Taj Mahal\n## END OF EXAMPLE ##\n\nHuman: What is Herbert Hoover known for?\n\nOutput:"
                       }
                     ],
-                    "temperature": 0.7,
+                    "temperature": 0.0,
                     "top_p": 1.0,
                     "n": 1,
                     "stream": false,
                     "presence_penalty": 0.0,
                     "frequency_penalty": 0.0,
-                    "user": "",
-                    "max_tokens": 100
+                    "user": ""
                   },
                   "output": null,
-                  "start_time": 1715135163.096786,
-                  "end_time": 1715135163.971506,
+                  "start_time": 1717807087.31035,
+                  "end_time": 1717807088.161625,
                   "error": {
                     "message": "Error code: 401 - {'statusCode': 401, 'message': 'Unauthorized. Access token is missing, invalid, audience is incorrect (https://cognitiveservices.azure.com), or have expired.'}",
                     "type": "AuthenticationError"
                   },
                   "children": [],
                   "node_name": null,
-                  "parent_id": "976018fb-12d8-4ec0-98d3-c69d4d01fe8d",
-                  "id": "441fa359-595a-4473-8b2c-965177e65012",
+                  "parent_id": "477b90bd-9162-4a2f-87ef-e689d7d530ea",
+                  "id": "8b570136-26c0-42c7-9487-a4e9cce78f29",
                   "system_metrics": {}
                 }
               ],
-              "node_name": "extract_query_from_question",
+              "node_name": "extract_topic",
               "parent_id": "",
-              "id": "976018fb-12d8-4ec0-98d3-c69d4d01fe8d",
+              "id": "477b90bd-9162-4a2f-87ef-e689d7d530ea",
               "system_metrics": {}
             }
           ],
           "system_metrics": {
-            "duration": 1.003718,
+            "duration": 0.893806,
             "prompt_tokens": 0,
             "completion_tokens": 0,
             "total_tokens": 0
@@ -144,7 +139,7 @@
               "innerException": {
                 "type": "AuthenticationError",
                 "message": "Error code: 401 - {'statusCode': 401, 'message': 'Unauthorized. Access token is missing, invalid, audience is incorrect (https://cognitiveservices.azure.com), or have expired.'}",
-                "stackTrace": "Traceback (most recent call last):\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tools/common.py\", line 353, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tools/aoai.py\", line 154, in chat\n    completion = self._client.chat.completions.create(**params)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tracing/_integrations/_openai_injector.py\", line 88, in wrapper\n    return f(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tracing/_trace.py\", line 380, in wrapped\n    output = func(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_utils/_utils.py\", line 275, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/resources/chat/completions.py\", line 667, in create\n    return self._post(\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_base_client.py\", line 1213, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_base_client.py\", line 902, in request\n    return self._request(\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_base_client.py\", line 993, in _request\n    raise self._make_status_error_from_response(err.response) from None\n",
+                "stackTrace": "Traceback (most recent call last):\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tools/common.py\", line 353, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tools/aoai.py\", line 154, in chat\n    completion = self._client.chat.completions.create(**params)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tracing/_integrations/_openai_injector.py\", line 88, in wrapper\n    return f(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tracing/_trace.py\", line 380, in wrapped\n    output = func(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_utils/_utils.py\", line 277, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/resources/chat/completions.py\", line 606, in create\n    return self._post(\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_base_client.py\", line 1240, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_base_client.py\", line 921, in request\n    return self._request(\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_base_client.py\", line 1020, in _request\n    raise self._make_status_error_from_response(err.response) from None\n",
                 "innerException": null
               }
             }
@@ -155,7 +150,7 @@
       "description": "",
       "tags": null,
       "system_metrics": {
-        "duration": 1.003718,
+        "duration": 0.893806,
         "prompt_tokens": 0,
         "completion_tokens": 0,
         "total_tokens": 0
@@ -166,17 +161,13 @@
   ],
   "node_runs": [
     {
-      "node": "extract_query_from_question",
-      "flow_run_id": "20358d9d-18dd-4254-be35-e391e0d23ec6",
-      "run_id": "20358d9d-18dd-4254-be35-e391e0d23ec6_extract_query_from_question_0",
+      "node": "extract_topic",
+      "flow_run_id": "ca3c7ef4-2c86-45ab-81e1-7d0b284e0f3f",
+      "run_id": "ca3c7ef4-2c86-45ab-81e1-7d0b284e0f3f_extract_topic_0",
       "status": "Failed",
       "inputs": {
         "deployment_name": "gpt4-deployment",
-        "temperature": 0.7,
-        "top_p": 1.0,
-        "max_tokens": 100,
-        "presence_penalty": 0.0,
-        "frequency_penalty": 0.0,
+        "temperature": 0.0,
         "question": "What is Herbert Hoover known for?"
       },
       "output": null,
@@ -201,32 +192,28 @@
           "innerException": {
             "type": "AuthenticationError",
             "message": "Error code: 401 - {'statusCode': 401, 'message': 'Unauthorized. Access token is missing, invalid, audience is incorrect (https://cognitiveservices.azure.com), or have expired.'}",
-            "stackTrace": "Traceback (most recent call last):\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tools/common.py\", line 353, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tools/aoai.py\", line 154, in chat\n    completion = self._client.chat.completions.create(**params)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tracing/_integrations/_openai_injector.py\", line 88, in wrapper\n    return f(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tracing/_trace.py\", line 380, in wrapped\n    output = func(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_utils/_utils.py\", line 275, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/resources/chat/completions.py\", line 667, in create\n    return self._post(\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_base_client.py\", line 1213, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_base_client.py\", line 902, in request\n    return self._request(\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_base_client.py\", line 993, in _request\n    raise self._make_status_error_from_response(err.response) from None\n",
+            "stackTrace": "Traceback (most recent call last):\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tools/common.py\", line 353, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tools/aoai.py\", line 154, in chat\n    completion = self._client.chat.completions.create(**params)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tracing/_integrations/_openai_injector.py\", line 88, in wrapper\n    return f(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/promptflow/tracing/_trace.py\", line 380, in wrapped\n    output = func(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_utils/_utils.py\", line 277, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/resources/chat/completions.py\", line 606, in create\n    return self._post(\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_base_client.py\", line 1240, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_base_client.py\", line 921, in request\n    return self._request(\n  File \"/home/zacksoenen/miniconda3/envs/llmops/lib/python3.8/site-packages/openai/_base_client.py\", line 1020, in _request\n    raise self._make_status_error_from_response(err.response) from None\n",
             "innerException": null
           }
         }
       },
-      "parent_run_id": "20358d9d-18dd-4254-be35-e391e0d23ec6_0",
-      "start_time": "2024-05-07T21:26:03.092883Z",
-      "end_time": "2024-05-07T21:26:03.992019Z",
+      "parent_run_id": "ca3c7ef4-2c86-45ab-81e1-7d0b284e0f3f_0",
+      "start_time": "2024-06-07T19:38:07.307738Z",
+      "end_time": "2024-06-07T19:38:08.198242Z",
       "index": 0,
       "api_calls": [
         {
           "name": "AzureOpenAI.chat",
           "type": "Function",
           "inputs": {
-            "prompt": "system:\nYou are an AI assistant tasked with turning human input into a searchable term. Given an input question or topic, infer a topic that should be used in a search.\n\nThe conversation history is provided just in case of a coreference (e.g. \"What is this?\" where \"this\" is defined in previous conversation).\n\nReturn the output as query used for next round user message.\n\n## EXAMPLE 1 ##\nuser:\nHuman: Tell me about George Washington?\n\nOutput: Gearge Washington\n## END of EXAMPLE ##\n\n## EXAMPLE 2 ##\nHuman: What is it like at the Taj Mahal?\n\nOutput: Taj Mahal\n## END OF EXAMPLE ##\n\nHuman: {{question}}\n\nOutput:",
+            "prompt": "system:\nYou are an AI assistant tasked with turning human input into a searchable term. Given an input question or topic, infer a topic that should be used in a search.\n\nThe conversation history is provided just in case of a coreference (e.g. \"What is this?\" where \"this\" is defined in previous conversation).\n\nReturn the output as query used for next round user message.\n\n## EXAMPLE 1 ##\nuser:\nHuman: Tell me about George Washington?\n\nOutput: George Washington\n## END of EXAMPLE ##\n\n## EXAMPLE 2 ##\nHuman: What is it like at the Taj Mahal?\n\nOutput: Taj Mahal\n## END OF EXAMPLE ##\n\nHuman: {{question}}\n\nOutput:",
             "deployment_name": "gpt4-deployment",
-            "temperature": 0.7,
-            "top_p": 1.0,
-            "max_tokens": 100,
-            "presence_penalty": 0.0,
-            "frequency_penalty": 0.0,
+            "temperature": 0.0,
             "question": "What is Herbert Hoover known for?"
           },
           "output": null,
-          "start_time": 1715135163.09315,
-          "end_time": 1715135163.972516,
+          "start_time": 1717807087.307992,
+          "end_time": 1717807088.16252,
           "error": {
             "message": "OpenAI API hits AuthenticationError: Error code: 401 - {'statusCode': 401, 'message': 'Unauthorized. Access token is missing, invalid, audience is incorrect (https://cognitiveservices.azure.com), or have expired.'} [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]",
             "type": "WrappedOpenAIError"
@@ -244,35 +231,34 @@
                   },
                   {
                     "role": "user",
-                    "content": "Human: Tell me about George Washington?\n\nOutput: Gearge Washington\n## END of EXAMPLE ##\n\n## EXAMPLE 2 ##\nHuman: What is it like at the Taj Mahal?\n\nOutput: Taj Mahal\n## END OF EXAMPLE ##\n\nHuman: What is Herbert Hoover known for?\n\nOutput:"
+                    "content": "Human: Tell me about George Washington?\n\nOutput: George Washington\n## END of EXAMPLE ##\n\n## EXAMPLE 2 ##\nHuman: What is it like at the Taj Mahal?\n\nOutput: Taj Mahal\n## END OF EXAMPLE ##\n\nHuman: What is Herbert Hoover known for?\n\nOutput:"
                   }
                 ],
-                "temperature": 0.7,
+                "temperature": 0.0,
                 "top_p": 1.0,
                 "n": 1,
                 "stream": false,
                 "presence_penalty": 0.0,
                 "frequency_penalty": 0.0,
-                "user": "",
-                "max_tokens": 100
+                "user": ""
               },
               "output": null,
-              "start_time": 1715135163.096786,
-              "end_time": 1715135163.971506,
+              "start_time": 1717807087.31035,
+              "end_time": 1717807088.161625,
               "error": {
                 "message": "Error code: 401 - {'statusCode': 401, 'message': 'Unauthorized. Access token is missing, invalid, audience is incorrect (https://cognitiveservices.azure.com), or have expired.'}",
                 "type": "AuthenticationError"
               },
               "children": [],
               "node_name": null,
-              "parent_id": "976018fb-12d8-4ec0-98d3-c69d4d01fe8d",
-              "id": "441fa359-595a-4473-8b2c-965177e65012",
+              "parent_id": "477b90bd-9162-4a2f-87ef-e689d7d530ea",
+              "id": "8b570136-26c0-42c7-9487-a4e9cce78f29",
               "system_metrics": {}
             }
           ],
-          "node_name": "extract_query_from_question",
+          "node_name": "extract_topic",
           "parent_id": "",
-          "id": "976018fb-12d8-4ec0-98d3-c69d4d01fe8d",
+          "id": "477b90bd-9162-4a2f-87ef-e689d7d530ea",
           "system_metrics": {}
         }
       ],
@@ -280,10 +266,10 @@
       "cached_flow_run_id": null,
       "logs": {
         "stdout": "",
-        "stderr": "[2024-05-07T21:26:03+0000] Exception occurs: AuthenticationError: Error code: 401 - {'statusCode': 401, 'message': 'Unauthorized. Access token is missing, invalid, audience is incorrect (https://cognitiveservices.azure.com), or have expired.'}\n"
+        "stderr": "[2024-06-07T19:38:08+0000] Exception occurs: AuthenticationError: Error code: 401 - {'statusCode': 401, 'message': 'Unauthorized. Access token is missing, invalid, audience is incorrect (https://cognitiveservices.azure.com), or have expired.'}\n"
       },
       "system_metrics": {
-        "duration": 0.899136
+        "duration": 0.890504
       },
       "result": null
     }

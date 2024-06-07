@@ -1,5 +1,6 @@
 azure-identity
 azure-ai-contentsafety
+ragas
 pillow
 wheel
 promptflow

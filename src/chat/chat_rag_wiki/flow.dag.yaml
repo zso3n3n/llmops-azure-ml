@@ -18,32 +18,28 @@ outputs:
   attack_detected:
     type: string
     reference: ${prompt_shield.output}
+  faithfulness:
+    type: string
+    reference: ${ragas_faith.output}
 nodes:
-- name: extract_query_from_question
+- name: extract_topic
   type: llm
   source:
     type: code
-    path: extract_query_from_question.jinja2
+    path: extract_topic.jinja2
   inputs:
     deployment_name: gpt4-deployment
-    temperature: 0.7
-    top_p: 1
-    max_tokens: 100
-    presence_penalty: 0
-    frequency_penalty: 0
+    temperature: 0
     question: ${inputs.input}
-  provider: AzureOpenAI
   connection: aoai-connect
   api: chat
-  module: promptflow.tools.aoai
-  use_variants: false
 - name: get_wiki_url
   type: python
   source:
     type: code
     path: get_wiki_url.py
   inputs:
-    entity: ${extract_query_from_question.output}
+    entity: ${extract_topic.output}
   use_variants: false
 - name: search_result_from_url
   type: python
@@ -75,17 +71,15 @@ nodes:
     path: augmented_chat.jinja2
   inputs:
     deployment_name: gpt4-deployment
-    temperature: 0.8
+    temperature: 0.1
     top_p: 1
     presence_penalty: 0
     frequency_penalty: 0
     question: ${inputs.input}
     contexts: ${process_search_result.output}
     max_tokens: 100
-  provider: AzureOpenAI
   connection: aoai-connect
   api: chat
-  module: promptflow.tools.aoai
   use_variants: false
 - name: prompt_shield
   type: python
@@ -95,3 +89,12 @@ nodes:
   inputs:
     prompt: ${inputs.input}
     context: ${clean_context.output}
+- name: ragas_faith
+  type: python
+  source:
+    type: code
+    path: ragas_faith.py
+  inputs:
+    prompt: ${inputs.input}
+    context: ${clean_context.output}
+    response: ${augmented_chat.output}
