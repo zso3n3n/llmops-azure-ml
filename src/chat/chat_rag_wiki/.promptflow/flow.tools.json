@@ -1,131 +1,131 @@
 {
-  "code": {
-    "extract_topic.jinja2": {
-      "type": "llm",
-      "inputs": {
-        "question": {
-          "type": [
-            "string"
-          ]
-        }
-      },
-      "source": "extract_topic.jinja2"
-    },
-    "get_wiki_url.py": {
-      "type": "python",
-      "inputs": {
-        "entity": {
-          "type": [
-            "string"
-          ]
+    "code": {
+        "extract_topic.jinja2": {
+            "type": "llm",
+            "inputs": {
+                "question": {
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "source": "extract_topic.jinja2"
         },
-        "count": {
-          "type": [
-            "int"
-          ],
-          "default": "2"
-        }
-      },
-      "source": "get_wiki_url.py",
-      "function": "get_wiki_url"
-    },
-    "search_result_from_url.py": {
-      "type": "python",
-      "inputs": {
-        "url_list": {
-          "type": [
-            "list"
-          ]
+        "get_wiki_url.py": {
+            "type": "python",
+            "inputs": {
+                "entity": {
+                    "type": [
+                        "string"
+                    ]
+                },
+                "count": {
+                    "type": [
+                        "int"
+                    ],
+                    "default": "2"
+                }
+            },
+            "source": "get_wiki_url.py",
+            "function": "get_wiki_url"
         },
-        "count": {
-          "type": [
-            "int"
-          ],
-          "default": "10"
-        }
-      },
-      "source": "search_result_from_url.py",
-      "function": "search_result_from_url"
-    },
-    "process_search_result.py": {
-      "type": "python",
-      "inputs": {
-        "search_result": {
-          "type": [
-            "object"
-          ]
-        }
-      },
-      "source": "process_search_result.py",
-      "function": "process_search_result"
-    },
-    "clean_context.py": {
-      "type": "python",
-      "inputs": {
-        "context": {
-          "type": [
-            "string"
-          ]
-        }
-      },
-      "source": "clean_context.py",
-      "function": "clean_context"
-    },
-    "augmented_chat.jinja2": {
-      "type": "llm",
-      "inputs": {
-        "question": {
-          "type": [
-            "string"
-          ]
+        "search_result_from_url.py": {
+            "type": "python",
+            "inputs": {
+                "url_list": {
+                    "type": [
+                        "list"
+                    ]
+                },
+                "count": {
+                    "type": [
+                        "int"
+                    ],
+                    "default": "10"
+                }
+            },
+            "source": "search_result_from_url.py",
+            "function": "search_result_from_url"
         },
-        "contexts": {
-          "type": [
-            "string"
-          ]
+        "process_search_result.py": {
+            "type": "python",
+            "inputs": {
+                "search_result": {
+                    "type": [
+                        "object"
+                    ]
+                }
+            },
+            "source": "process_search_result.py",
+            "function": "process_search_result"
+        },
+        "clean_context.py": {
+            "type": "python",
+            "inputs": {
+                "context": {
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "source": "clean_context.py",
+            "function": "clean_context"
+        },
+        "augmented_chat.jinja2": {
+            "type": "llm",
+            "inputs": {
+                "question": {
+                    "type": [
+                        "string"
+                    ]
+                },
+                "contexts": {
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "source": "augmented_chat.jinja2"
+        },
+        "prompt_shield.py": {
+            "type": "python",
+            "inputs": {
+                "prompt": {
+                    "type": [
+                        "string"
+                    ]
+                },
+                "context": {
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "source": "prompt_shield.py",
+            "function": "prompt_shield"
+        },
+        "ragas_faith.py": {
+            "type": "python",
+            "inputs": {
+                "prompt": {
+                    "type": [
+                        "string"
+                    ]
+                },
+                "context": {
+                    "type": [
+                        "string"
+                    ]
+                },
+                "response": {
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "source": "ragas_faith.py",
+            "function": "ragas_faithfulness"
         }
-      },
-      "source": "augmented_chat.jinja2"
     },
-    "prompt_shield.py": {
-      "type": "python",
-      "inputs": {
-        "prompt": {
-          "type": [
-            "string"
-          ]
-        },
-        "context": {
-          "type": [
-            "string"
-          ]
-        }
-      },
-      "source": "prompt_shield.py",
-      "function": "prompt_shield"
-    },
-    "ragas_faith.py": {
-      "type": "python",
-      "inputs": {
-        "prompt": {
-          "type": [
-            "string"
-          ]
-        },
-        "context": {
-          "type": [
-            "string"
-          ]
-        },
-        "response": {
-          "type": [
-            "string"
-          ]
-        }
-      },
-      "source": "ragas_faith.py",
-      "function": "ragas_faithfulness"
-    }
-  },
-  "package": {}
+    "package": {}
 }
