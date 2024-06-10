@@ -39,6 +39,11 @@ jobs:
           RESOURCE_GROUP_NAME: ${{ secrets.RESOURCE_GROUP_NAME }}
           WORKSPACE_NAME: ${{ secrets.WORKSPACE_NAME }}
           SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
+          CONTENT_SAFE_BASE: ${{ secrets.CONTENT_SAFE_BASE}}
+          CONTENT_SAFE_KEY: ${{ secrets.CONTENT_SAFE_KEY}}
+          AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY}}
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT}}
+          AZURE_OPENAI_DEPLOYMENT_NAME: ${{ secrets.AZURE_OPENAI_DEPLOYMENT_NAME}}
         run: |
           az configure --defaults group='${{ env.RESOURCE_GROUP_NAME }}'
           az configure --defaults workspace='${{ env.WORKSPACE_NAME }}'
