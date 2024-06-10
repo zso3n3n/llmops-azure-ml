@@ -1,6 +1,6 @@
 {
     "code": {
-        "extract_query_from_question.jinja2": {
+        "extract_topic.jinja2": {
             "type": "llm",
             "inputs": {
                 "question": {
@@ -9,7 +9,7 @@
                     ]
                 }
             },
-            "source": "extract_query_from_question.jinja2"
+            "source": "extract_topic.jinja2"
         },
         "get_wiki_url.py": {
             "type": "python",
@@ -103,6 +103,28 @@
             },
             "source": "prompt_shield.py",
             "function": "prompt_shield"
+        },
+        "ragas_faith.py": {
+            "type": "python",
+            "inputs": {
+                "prompt": {
+                    "type": [
+                        "string"
+                    ]
+                },
+                "context": {
+                    "type": [
+                        "string"
+                    ]
+                },
+                "response": {
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "source": "ragas_faith.py",
+            "function": "ragas_faithfulness"
         }
     },
     "package": {}

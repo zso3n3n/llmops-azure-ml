@@ -19,6 +19,27 @@
           "context": []
         }
       }
+    },
+    "extract_query_from_question": {
+      "variant_0": {
+        "inputs": {
+          "question": []
+        }
+      }
+    },
+    "extract_topic": {
+      "variant_0": {
+        "inputs": {
+          "question": []
+        }
+      }
+    },
+    "get_wiki_url": {
+      "variant_0": {
+        "inputs": {
+          "entity": []
+        }
+      }
     }
   }
 }

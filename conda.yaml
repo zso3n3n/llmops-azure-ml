@@ -20,3 +20,4 @@ dependencies:
     - promptflow-tools
     - keyrings.alt
     - bs4
+    - ragas
